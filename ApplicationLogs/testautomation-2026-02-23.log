@@ -1,0 +1,39 @@
+2026-02-23 16:20:01 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/nitinkumar/Library/Caches/JetBrains/IdeaIC2025.2/temp-testng-customsuite.xml
+
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - URL is entered in browser
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Clicking on Novice link
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Successfully clicked on Novice link
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Clicking on Practice Form link
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Successfully clicked on Practice Form link
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Clicking on Basic Form link
+2026-02-23 16:20:03 [main] INFO  c.alphabeta.methods.HomePageMethods - Successfully clicked on Basic Form link
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Switching to Iframe
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Successfully switched to Iframe
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Entering username: nitin01
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Username entered successfully
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Entering password
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Password entered successfully
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Entering comments
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Comments entered successfully
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Selecting gender: Male
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Gender selected successfully
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Selecting skills: Java,Selenium
+2026-02-23 16:20:05 [main] INFO  c.alphabeta.methods.HomePageMethods - Skills selected successfully
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Selecting experience: 1-2 Years
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Experience selected successfully
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Selecting automation tools: Selenium,Playwright
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Automation tools selected successfully
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Uploading resume from path: testdata/resume1.pdf
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Resume uploaded successfully
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Clicking on Submit button
+2026-02-23 16:20:06 [main] INFO  c.alphabeta.methods.HomePageMethods - Submit button clicked successfully
+2026-02-23 16:28:12 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/nitinkumar/Library/Caches/JetBrains/IdeaIC2025.2/temp-testng-customsuite.xml
+
+2026-02-23 16:31:45 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/nitinkumar/Library/Caches/JetBrains/IdeaIC2025.2/temp-testng-customsuite.xml
+
+2026-02-23 16:32:33 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/nitinkumar/Library/Caches/JetBrains/IdeaIC2025.2/temp-testng-customsuite.xml
+
