@@ -19,9 +19,9 @@
         <span class="ms-3 fs-6">QA Test Project</span>
       </div>
       <div>
-        <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 5s</span>
-        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1 text-success"></i> 2026-02-23 04:20:01 pm</span>
-        <span class="badge badge-outline text-lg me-3"><i class="bi bi-clock me-1 text-danger"></i> 2026-02-23 04:20:06 pm</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 24s</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1 text-success"></i> 2026-09-16 07:13:05 a.m.</span>
+        <span class="badge badge-outline text-lg me-3"><i class="bi bi-clock me-1 text-danger"></i> 2026-09-16 07:13:29 a.m.</span>
           <button role="button" id="sys-info" class="btn btn-outline-primary smaller" title="View System Info">
             <i class="bi bi-pc-display-horizontal"></i></button>
         <button role="button" id="shortcuts" class="btn btn-outline-primary smaller" title="Shortcuts">
@@ -46,8 +46,8 @@
                 </div>
               </div>
               <div class="card-footer small">
-                <span id="sp1">1</span> Passed,
-                <span id="sf1">0</span> Failed,
+                <span id="sp1">0</span> Passed,
+                <span id="sf1">1</span> Failed,
                 <span id="ss1">0</span> Skipped
               </div>
             </div>
@@ -63,8 +63,8 @@
                 </div>
               </div>
               <div class="card-footer small">
-                <span id="sp2">1</span> Passed,
-                <span id="sf2">0</span> Failed,
+                <span id="sp2">0</span> Passed,
+                <span id="sf2">1</span> Failed,
                 <span id="ss2">0</span> Skipped
               </div>
             </div>
@@ -80,9 +80,9 @@
                   </div>
                 </div>
                 <div class="card-footer small">
-                  <span id="sp3">7</span> Passed,
-                  <span id="sf3">0</span> Failed,
-                  <span id="ss3">0</span> Skipped
+                  <span id="sp3">1</span> Passed,
+                  <span id="sf3">1</span> Failed,
+                  <span id="ss3">1</span> Skipped
                 </div>
               </div>
             </div>
@@ -112,9 +112,9 @@
                   <tr>
                     <td><a href="#" class="secondary tag">@SmokeTest</a></td>
                     <td>1</td>
-                    <td>1</td>
                     <td>0</td>
-                    <td>0ms</td>
+                    <td>1</td>
+                    <td>10ms</td>
                   </tr>
               </tbody>
             </table>
@@ -138,17 +138,17 @@
         </div>
       </div>
     </div>
-      <div class="test-container passed">
+      <div class="test-container failed">
         <div class="container">
           <div class="row">
             <div class="col-4">
-              <h6 class="mb-3 testname fs-6 passed">Feature: Test Home Page of the Application</h6>
+              <h6 class="mb-3 testname fs-6 failed">Feature: Left sidebar navigation on QA Automation Labs testing page</h6>
               <div class="small">
-                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 1ms</span>
+                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 12ms</span>
                 <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
-                  2026-02-23 04:20:06 pm</span>
+                  2026-09-16 07:13:29 a.m.</span>
                 <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
-                  2026-02-23 04:20:06 pm</span>
+                  2026-09-16 07:13:29 a.m.</span>
               </div>
                 <div class="my-2">
                     <span class="badge rounded-pill text-bg-secondary">@SmokeTest</span>
@@ -156,52 +156,54 @@
               
             </div>
             <div class="col-8">
-                <div class="card mb-3 result passed">
+                <div class="card mb-3 result failed">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div>
-                          <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="fs-6 ms-2">Scenario: Test Practice form submission</span>
+                          <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+                        <span class="fs-6 ms-2">Scenario: User clicks each left-side menu item in a single browser session and verifies every page</span>
                       </div>
                       <div>
                           <span class="tag-list">
                               <span class="badge rounded-pill text-bg-secondary">@SmokeTest</span>
                           </span>
                           <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">0ms</span>
+                        <span class="badge text-dark bg-light">10ms</span>
                       </div>
                     </div>
                     
   <div class="mt-2">
         <div class="mt-1 pb-1">
             <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">Given User is on the "https://alphabetaops.com/" in Chrome</span>
+          <span class="ms-2">Given the user opens the "https://testing.qaautomationlabs.com/index.php" page</span>
         </div>
         <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">When User clicks on the Novice Link</span>
+              <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+          <span class="ms-2">Then the user verifies all left-sidebar menu items one by one</span>
+            <pre class="py-2 mt-2">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.cssSelector: div.mb-2 ul li.list-group-item
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.125, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /var/folders/17/gm1mk_j914z...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49527}, goog:processID: 24673, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49527/devtoo..., se:cdpVersion: 150.0.7871.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6d67f8b5a742ab66487e38f1a34ac01f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at com.alphabeta.methods.HomePageMethods.verifyLeftSidebarMenuItemsOneByOne(HomePageMethods.java:33)
+	at steps.HomeSteps.the_user_verifies_all_left_sidebar_menu_items_one_by_one(HomeSteps.java:25)
+	at ✽.the user verifies all left-sidebar menu items one by one(file:///Users/gurkang/Desktop/learn-bdd-feb-batch/src/test/resources/Features/Home.feature:8)
+</pre>
         </div>
         <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">And I click on Basic form present under Practice Form Option</span>
-        </div>
-        <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">And I Switch to Iframe</span>
-        </div>
-        <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">And User fills the form with following details</span>
-        </div>
-        <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">And I click on submit button</span>
-        </div>
-        <div class="mt-1 pb-1">
-            <i class="bi bi-check-circle-fill text-success"></i>
-          <span class="ms-2">Then Form should be submitted successfully</span>
+              <i class="bi bi-exclamation-octagon-fill text-info"></i>
+          <span class="ms-2">And the browser is closed</span>
         </div>
   </div>
+                      <div class="row mt-3">
+                          <div class="embed col-2 mb-1">
+                            <img src="resources/c9a30d5f-113c-4d6c-9b73-5d218c49032d.png" />
+                          </div>
+                      </div>
                   </div>
                 </div>
             </div>
@@ -212,23 +214,23 @@
   </div>
 
   <script>
-    const stats1Annotation = {'total': 1, 'passed': 1};
+    const stats1Annotation = {'total': 1, 'passed': 0};
     const stats1 = [
-      { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
-      { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+      { result: 'Passed', count: 0, bg: 'rgb(140, 197, 83)' },
+      { result: 'Failed', count: 1, bg: 'rgb(233,80,113)' },
       { result: 'Skipped', count: 0, bg: 'rgb(13, 202, 240)' }
     ];
-      const stats2Annotation = {'total': 1, 'passed': 1};
+      const stats2Annotation = {'total': 1, 'passed': 0};
       const stats2 = [
-        { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
-        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+        { result: 'Passed', count: 0, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 1, bg: 'rgb(233,80,113)' },
         { result: 'Skipped', count: 0, bg: 'rgb(13, 202, 240)' }
       ];
-      const stats3Annotation = {'total': 7, 'passed': 7};
+      const stats3Annotation = {'total': 3, 'passed': 1};
       const stats3 = [
-        { result: 'Passed', count: 7, bg: 'rgb(140, 197, 83)' },
-        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
-        { result: 'Skipped', count: 0, bg: 'rgb(13, 202, 240)' }
+        { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 1, bg: 'rgb(233,80,113)' },
+        { result: 'Skipped', count: 1, bg: 'rgb(13, 202, 240)' }
       ];
      
   </script>
@@ -247,15 +249,15 @@
               <tbody>
                   <tr>
                     <td>java.version</td>
-                    <td>17.0.16</td>
+                    <td>17.0.12</td>
                   </tr>
                   <tr>
                     <td>java.vm.name</td>
-                    <td>OpenJDK 64-Bit Server VM</td>
+                    <td>Java HotSpot(TM) 64-Bit Server VM</td>
                   </tr>
                   <tr>
                     <td>java.vm.vendor</td>
-                    <td>Homebrew</td>
+                    <td>Oracle Corporation</td>
                   </tr>
                   <tr>
                     <td>java.class.version</td>
@@ -263,7 +265,7 @@
                   </tr>
                   <tr>
                     <td>java.runtime.name</td>
-                    <td>OpenJDK Runtime Environment</td>
+                    <td>Java(TM) SE Runtime Environment</td>
                   </tr>
                   <tr>
                     <td>os.name</td>
@@ -271,11 +273,11 @@
                   </tr>
                   <tr>
                     <td>os.arch</td>
-                    <td>aarch64</td>
+                    <td>x86_64</td>
                   </tr>
                   <tr>
                     <td>os.version</td>
-                    <td>26.3</td>
+                    <td>12.7.6</td>
                   </tr>
               </tbody>
             </table>

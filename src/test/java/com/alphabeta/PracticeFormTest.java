@@ -1,77 +1,69 @@
 package com.alphabeta;
 
-import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.SelectOption;
-import org.testng.annotations.*;
+import com.alphabeta.objects.HomeObjects;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import java.nio.file.Paths;
 
 public class PracticeFormTest {
-    static Playwright playwright;
-    static Browser browser;
-    BrowserContext context;
-    Page page;
+    static WebDriver driver;
+
     @BeforeSuite
     public void launchBrowser() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(false)
-        );
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
+
     @BeforeMethod
     public void setup() {
-        context = browser.newContext();
-        page = context.newPage();
-        page.navigate("https://alphabetaops.com/");
+        driver.get("https://alphabetaops.com/");
     }
 
     @Test
     public void testPracticeForm() {
+        driver.findElement(HomeObjects.NOVICE_LINK).click();
+        driver.findElement(HomeObjects.PRACTICE_FORM_LINK).click();
+        driver.findElement(HomeObjects.BASIC_FORM_LINK).click();
 
-        // Click Novice
-        page.locator("div.mb-2:first-child").click();
+        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.content-iframe")));
 
-        // Click Practice Form
-        page.locator("div.mb-2:first-child ul li.list-group-item:last-child").click();
-        page.locator("div.mb-2:first-child ul li.list-group-item:last-child a").click();
-        // Switch to iframe (Correct way in Playwright)
-        FrameLocator frame = page.frameLocator("iframe.content-iframe");
+        driver.findElement(HomeObjects.USERNAME_FIELD).sendKeys("Nitin");
+        driver.findElement(HomeObjects.PASSWORD_FIELD).sendKeys("Password123");
+        driver.findElement(HomeObjects.COMMENTS_FIELD).sendKeys("This is Playwright test");
 
-        // Fill Form
-        frame.locator("#username").fill("Nitin");
-        frame.locator("#password").fill("Password123");
-        frame.locator("#comments").fill("This is Playwright test");
+        driver.findElement(HomeObjects.GENDER_MALE).click();
+        driver.findElement(HomeObjects.SKILLS).click();
 
-        // Select Gender
-        frame.locator("//input[@value='male']").check();
+        new Select(driver.findElement(HomeObjects.EXPERIENCE)).selectByVisibleText("1-2 Years");
 
-        // Select Skills
-        frame.locator("//input[@value='java']").check();
+        Select tools = new Select(driver.findElement(HomeObjects.AUTOMATION_TOOLS));
+        tools.selectByVisibleText("Selenium");
+        tools.selectByVisibleText("Playwright");
+        tools.selectByVisibleText("Cypress");
 
-        // Select Experience dropdown
-        frame.locator("#experience")
-                .selectOption(new SelectOption().setLabel("1-2 Years"));
+        driver.findElement(HomeObjects.CHOOSE_FILE)
+                .sendKeys(Paths.get("src/test/resources/resume.pdf").toAbsolutePath().toString());
 
-        // Multi Select Automation Tools
-        frame.locator("#tools")
-                .selectOption(new String[]{"Selenium", "Playwright", "Cypress"});
-
-        // Upload Resume
-        frame.locator("#resume")
-                .setInputFiles(Paths.get("src/test/resources/resume.pdf"));
-
-        // Click Submit
-        frame.locator("//button[@type='submit']").click();
+        driver.findElement(HomeObjects.SUBMIT_BUTTON).click();
     }
 
     @AfterMethod
     public void tearDown() {
-        context.close();
+        driver.switchTo().defaultContent();
     }
 
     @AfterSuite
     public void closeBrowser() {
-        browser.close();
-        playwright.close();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
