@@ -4,7 +4,9 @@ import com.alphabeta.methods.FormMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.WebDriver;
+import java.util.Map;
 
 public class FormSteps {
 
@@ -18,8 +20,9 @@ public class FormSteps {
         FormMethods.verifyFormPAge(driver, formPageUrl);
     }
     @And("the user fills out the form with valid data")
-    public void the_user_fills_out_the_form_with_valid_data() {
-FormMethods.fillform(driver);
+    public void the_user_fills_out_the_form_with_valid_data(DataTable formData) {
+        Map<String, String> data = formData.asMaps().get(0);
+        FormMethods.fillform(driver, data);
     }
     @And("the user submits the form")
     public void the_user_submits_the_form() {
